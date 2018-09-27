@@ -1,0 +1,7 @@
+C:\Users\G1\Desktop\RevenueCash\RevenueCash.ServicesLibrary\bin\Debug\RevenueCash.ServicesLibrary.dll
+C:\Users\G1\Desktop\RevenueCash\RevenueCash.ServicesLibrary\bin\Debug\RevenueCash.ServicesLibrary.pdb
+C:\Users\G1\Desktop\RevenueCash\RevenueCash.ServicesLibrary\bin\Debug\RevenueCash.Models.dll
+C:\Users\G1\Desktop\RevenueCash\RevenueCash.ServicesLibrary\bin\Debug\RevenueCash.Models.pdb
+C:\Users\G1\Desktop\RevenueCash\RevenueCash.ServicesLibrary\obj\Debug\RevenueCash.ServicesLibrary.csprojResolveAssemblyReference.cache
+C:\Users\G1\Desktop\RevenueCash\RevenueCash.ServicesLibrary\obj\Debug\RevenueCash.ServicesLibrary.dll
+C:\Users\G1\Desktop\RevenueCash\RevenueCash.ServicesLibrary\obj\Debug\RevenueCash.ServicesLibrary.pdb

@@ -1,0 +1,29 @@
+﻿@model RevenueCash.Models.Juego.Game
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Juego</title>
+    <style>
+        .fila{
+            overflow:hidden;
+        }
+        .celda, .celdaVacia{
+            width: 34px;
+            height: 34px;
+            float: left;
+            padding: 7px;
+        }
+        .celda {
+            background-image: url("/imagenes/CeldaVacia.png");
+        }
+    </style>
+</head>
+<body>
+    @Html.Partial("Partial/Tablero", Model.Board);
+</body>
+</html>

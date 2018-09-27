@@ -15,3 +15,13 @@ C:\Users\G1\Desktop\RevenueCash\RevenueCash\obj\Debug\RevenueCash.Form1.resource
 C:\Users\G1\Desktop\RevenueCash\RevenueCash\obj\Debug\RevenueCash.Properties.Resources.resources
 C:\Users\G1\Desktop\RevenueCash\RevenueCash\obj\Debug\RevenueCash.csproj.GenerateResource.Cache
 C:\Users\G1\Desktop\RevenueCash\RevenueCash\obj\Debug\RevenueCash.csprojResolveAssemblyReference.cache
+C:\Users\harry\source\repos\RevenueCash\RevenueCash\bin\Debug\RevenueCash.exe.config
+C:\Users\harry\source\repos\RevenueCash\RevenueCash\bin\Debug\RevenueCash.exe
+C:\Users\harry\source\repos\RevenueCash\RevenueCash\bin\Debug\RevenueCash.pdb
+C:\Users\harry\source\repos\RevenueCash\RevenueCash\obj\Debug\RevenueCash.csprojAssemblyReference.cache
+C:\Users\harry\source\repos\RevenueCash\RevenueCash\obj\Debug\RevenueCash.Form1.resources
+C:\Users\harry\source\repos\RevenueCash\RevenueCash\obj\Debug\RevenueCash.Properties.Resources.resources
+C:\Users\harry\source\repos\RevenueCash\RevenueCash\obj\Debug\RevenueCash.csproj.GenerateResource.cache
+C:\Users\harry\source\repos\RevenueCash\RevenueCash\obj\Debug\RevenueCash.csproj.CoreCompileInputs.cache
+C:\Users\harry\source\repos\RevenueCash\RevenueCash\obj\Debug\RevenueCash.exe
+C:\Users\harry\source\repos\RevenueCash\RevenueCash\obj\Debug\RevenueCash.pdb

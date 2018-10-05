@@ -1,0 +1,51 @@
+﻿body{
+    background-image: url("/imagenes/background.jpg");
+    background-size: cover;
+}
+.maindiv{
+    height:100vh;
+    width:100vw;
+}
+.title{
+    font-family: 'Dancing Script', cursive;
+    font-size:36pt;
+    font-style: normal;
+    text-align: center;
+    color: red;
+}
+.tablero{
+    height:576px;
+    width: 576px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 40px;
+}
+.fila{
+    overflow:hidden;
+}
+.celda, .celdaVacia{
+    width: 34px;
+    height: 34px;
+    float: left;
+    padding: 7px;
+}
+.celda {
+    background-image: url("/imagenes/CeldaVacia.png");
+}
+.header{
+    margin:30px;
+}
+.header .content {
+    width:576px;
+    margin: 0 auto;
+}
+
+.header . content .puntaje{
+    font-size: 24px;
+    color: white;   
+    background-color: rgba(160,94,44,0.65);
+    overflow: hidden;
+    display: inline-block;
+    padding: 10px;
+}

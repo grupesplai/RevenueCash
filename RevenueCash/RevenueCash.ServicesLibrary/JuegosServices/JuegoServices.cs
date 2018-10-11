@@ -138,7 +138,7 @@ namespace RevenueCash.ServicesLibrary.JuegosServices
         {
             actualGame.Score = 0;
             actualGame.CurrentLevel = actualGame.CurrentLevel.NextLevel;
-            actualGame.Board = actualGame.Board.
+            actualGame.Board = actualGame.CurrentLevel.NextLevel;
             return actualGame;
         }
     }

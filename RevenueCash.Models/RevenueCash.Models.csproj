@@ -41,10 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Configurations.cs" />
     <Compile Include="Juego\Game.cs" />
     <Compile Include="Juego\GameDifficulty.cs" />
     <Compile Include="Juego\GameState.cs" />
+    <Compile Include="Juego\Level.cs" />
     <Compile Include="Piezas\Celda.cs" />
     <Compile Include="Piezas\ColorFicha.cs" />
     <Compile Include="Piezas\Ficha.cs" />

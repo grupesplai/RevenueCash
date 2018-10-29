@@ -1,5 +1,6 @@
 ﻿using RevenueCash.Models.Juego;
 using RevenueCash.Models.Piezas;
+using RevenueCash.ServicesLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,10 +13,14 @@ namespace RevenueCash.ServicesLibrary.JuegosServices
     {
         Game ComenzarNuevoJuego(int nivel);
 
-        Tablero GetTableroDeNivel(int nivel);
+        Level GetLevel(int level);
 
-        Game DisparaFicha(Game game, Posicion desdeDonde, int indice);
+        Celda DisparaFicha(Game game, Posicion desdeDonde, int indice);
+
+        MovimientoFicha NuevoMovimiento(Game game, Posicion posicion, int indice);
 
         IList<FichaDisparo> GetFichaDisparo(int size, Posicion desdeDonde);
+
+        Game GetNextLevel(Game actualGame);
     }
 }

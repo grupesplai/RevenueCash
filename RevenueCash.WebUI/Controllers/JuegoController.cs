@@ -2,6 +2,8 @@
 using RevenueCash.ServicesLibrary.JuegosServices;
 using System.Web.Mvc;
 using RevenueCash.Models.Piezas;
+using System.Collections.Generic;
+using RevenueCash.ServicesLibrary.Models;
 
 namespace RevenueCash.WebUI.Controllers
 {
@@ -39,10 +41,30 @@ namespace RevenueCash.WebUI.Controllers
         public ActionResult Disparar(Posicion desdeDonde, int indice)
         {
             Game juegoActual = Session["juegoActual"] as Game;
-            Game juegoResultado = _juegoServices.DisparaFicha(juegoActual, desdeDonde, indice);
-            Session["juegoActual"] = juegoResultado;
 
+            MovimientoFicha movimiento = _juegoServices.NuevoMovimiento(juegoActual, desdeDonde, indice);
+            if (movimiento.Juego.JuegoFinalizado)
+            {
+                return RedirectToAction("/LevelFinished");
+            }
+
+            Session["juegoActual"] = movimiento.Juego;
             return Redirect("/Juego");
+        }
+
+        public ActionResult LevelFinished()
+        {
+            return View("/LevelFinished");
+        }
+
+        public ActionResult NextLevel(Posicion desdeDonde, int indice)
+        {
+            Game juegoActual = Session["juegoActual"]as Game;
+            juegoActual = _juegoServices.GetNextLevel(juegoActual);
+
+            Session["juegoActual"] = juegoActual;
+            return Redirect("/Juego");
+
         }
     }
 }

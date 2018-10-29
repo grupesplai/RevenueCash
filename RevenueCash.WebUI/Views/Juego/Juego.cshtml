@@ -1,29 +1,15 @@
 ﻿@model RevenueCash.Models.Juego.Game
 @{
-    Layout = null;
+    Layout = "/Views/Shared/_Layout.cshtml";
 }
+    @section header
+    {
+        <div class="header">
+            <div class="content">
+                <div class="puntaje">@Model.Score</div>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Juego</title>
-    <style>
-        .fila{
-            overflow:hidden;
-        }
-        .celda, .celdaVacia{
-            width: 34px;
-            height: 34px;
-            float: left;
-            padding: 7px;
-        }
-        .celda {
-            background-image: url("/imagenes/CeldaVacia.png");
-        }
-    </style>
-</head>
-<body>
+            </div>
+        </div>
+    }
     @Html.Partial("Partial/Tablero", Model.Board);
-</body>
-</html>
+

@@ -22,6 +22,7 @@ namespace RevenueCash.Models.Juego
             this.Score = 0;
             this.Difficulty = difficulty;
         }
+        public Level CurrentLevel { get; set; }
 
         public GameState State { get; set; }
 
@@ -30,6 +31,14 @@ namespace RevenueCash.Models.Juego
         public int Score { get; set; }
 
         public Tablero Board { get; set; }
+
+        public bool JuegoFinalizado
+        {
+            get
+            {
+                return (this.Board.FaltanRomper == 0 || !this.Board.QuedanCeldasLibres);
+            }
+        }
 
         public static Game GenerateNewGame(GameDifficulty difficulty)
         {

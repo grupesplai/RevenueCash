@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="JuegosServices\IJuegoServices.cs" />
     <Compile Include="JuegosServices\JuegoServices.cs" />
+    <Compile Include="Models\MovimientoFicha.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

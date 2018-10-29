@@ -17,6 +17,31 @@ namespace RevenueCash.Models.Piezas
 
         public Celda[,] Celdas { get; set; }
 
+        public int FaltanRomper
+        {
+            get
+            {
+                int cantidad = 0;
+                foreach (var celda in Celdas)
+                {
+                    if (celda.Ficha != null) cantidad++;
+                }
+                return cantidad;
+            }
+        }
+
+        public bool QuedanCeldasLibres
+        {
+            get
+            {
+                foreach (var celda in Celdas)
+                {
+                    if (celda.Ficha == null) return true;
+                }
+                return false;
+            }
+        }
+
         public static Tablero GenerateBoard(int size)
         {
             Tablero tablero = new Tablero();
@@ -44,7 +69,7 @@ namespace RevenueCash.Models.Piezas
             checkCelda(rowIndex, colIndex + 1, fichaNueva, celdasARomper);
             checkCelda(rowIndex - 1, colIndex, fichaNueva, celdasARomper);
             checkCelda(rowIndex + 1, colIndex, fichaNueva, celdasARomper);
-            
+
             if (celdasARomper.Count >= 3)
                 return celdasARomper;
             else
@@ -57,14 +82,15 @@ namespace RevenueCash.Models.Piezas
             return celdasYaChequeadas.Count(t => t.RowIndex == rowIndex && t.ColIndex == colIndex) > 0;
         }
 
-        private void checkCelda(int rowIndex, int colIndex, Ficha fichaNueva, IList<Celda> celdasARomper)
+       private void checkCelda(int rowIndex, int colIndex, Ficha fichaNueva, IList<Celda> celdasARomper)
         {
             if (yaSeChequeoCelda(rowIndex, colIndex)) return;
-
+ 
             if (rowIndex < 0 || colIndex < 0 || rowIndex > this.Size - 1 || colIndex > this.Size - 1)
                 return;
-
-            if (this.Celdas[rowIndex, colIndex].Ficha != null || this.Celdas[rowIndex, colIndex].Ficha.Color == fichaNueva.Color) { 
+ 
+            if (this.Celdas[rowIndex, colIndex].Ficha != null && this.Celdas[rowIndex, colIndex].Ficha.Color == fichaNueva.Color)
+            { 
                 celdasARomper.Add(this.Celdas[rowIndex, colIndex]);
                 this.celdasYaChequeadas.Add(this.Celdas[rowIndex, colIndex]);
                 checkCelda(rowIndex - 1, colIndex, fichaNueva, celdasARomper);

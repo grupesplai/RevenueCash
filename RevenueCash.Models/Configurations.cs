@@ -27,7 +27,7 @@ namespace RevenueCash.Models
                                 XXXXXXXXXX",
                 LevelNumber = 1
             };
-
+            Levels.Add(level1);
             Level level2 = new Level()
             {
                 StringLevel = @"XXXXXXXXXX

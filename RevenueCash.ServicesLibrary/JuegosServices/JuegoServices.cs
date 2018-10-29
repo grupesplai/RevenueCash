@@ -119,7 +119,7 @@ namespace RevenueCash.ServicesLibrary.JuegosServices
                 {
                     movimiento.CeldaRotas = celdasARomper;
                     movimiento.PuntosGanados = celdasARomper.Count * 10;
-                    game.Score = movimiento.PuntosGanados;
+                    game.Score += movimiento.PuntosGanados;
 
                     foreach (var celda in celdasARomper)
                     {
@@ -137,8 +137,8 @@ namespace RevenueCash.ServicesLibrary.JuegosServices
         public Game GetNextLevel(Game actualGame)
         {
             actualGame.Score = 0;
-            actualGame.CurrentLevel = actualGame.CurrentLevel.NextLevel;
-            //actualGame.Board = actualGame.CurrentLevel.NextLevel;
+            actualGame.CurrentLevel = this.GetLevel(2);
+            actualGame.Board = Tablero.GenerateBoardFromString(actualGame.CurrentLevel.StringLevel);
             return actualGame;
         }
     }

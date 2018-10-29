@@ -30,12 +30,19 @@ namespace RevenueCash.WebUI.Controllers
         public ActionResult Nuevo()
         {
             Game newGame = _juegoServices.ComenzarNuevoJuego(1);
+            newGame.State = GameState.Comenzado;
+            newGame = this.configFichaDisparo(newGame);
+            Session["juegoActual"] = newGame;
+            return Redirect("/Juego");
+        }
+
+        private Game configFichaDisparo(Game newGame)
+        {
             newGame.Board.FichaDisparo.Add(Posicion.Arriba, _juegoServices.GetFichaDisparo(newGame.Board.Size, Posicion.Arriba));
             newGame.Board.FichaDisparo.Add(Posicion.Abajo, _juegoServices.GetFichaDisparo(newGame.Board.Size, Posicion.Abajo));
             newGame.Board.FichaDisparo.Add(Posicion.Derecha, _juegoServices.GetFichaDisparo(newGame.Board.Size, Posicion.Derecha));
             newGame.Board.FichaDisparo.Add(Posicion.Izquierda, _juegoServices.GetFichaDisparo(newGame.Board.Size, Posicion.Izquierda));
-            Session["juegoActual"] = newGame;
-            return Redirect("/Juego");
+            return newGame;
         }
 
         public ActionResult Disparar(Posicion desdeDonde, int indice)
@@ -45,6 +52,7 @@ namespace RevenueCash.WebUI.Controllers
             MovimientoFicha movimiento = _juegoServices.NuevoMovimiento(juegoActual, desdeDonde, indice);
             if (movimiento.Juego.JuegoFinalizado)
             {
+                juegoActual.State = GameState.Finalizado;
                 return RedirectToAction("/LevelFinished");
             }
 
@@ -54,14 +62,16 @@ namespace RevenueCash.WebUI.Controllers
 
         public ActionResult LevelFinished()
         {
-            return View("/LevelFinished");
+            return View("LevelFinished", Session["juegoActual"]);
         }
 
-        public ActionResult NextLevel(Posicion desdeDonde, int indice)
+        public ActionResult NextLevel()
         {
             Game juegoActual = Session["juegoActual"]as Game;
             juegoActual = _juegoServices.GetNextLevel(juegoActual);
+            juegoActual.State = GameState.Comenzado;
 
+            juegoActual = this.configFichaDisparo(juegoActual);
             Session["juegoActual"] = juegoActual;
             return Redirect("/Juego");
 

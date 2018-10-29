@@ -1,0 +1,14 @@
+c:\users\jcumba\documents\visual studio 2015\Projects\RevenueCash\RevenueCash.UnitTests\bin\Debug\RevenueCash.UnitTests.dll
+c:\users\jcumba\documents\visual studio 2015\Projects\RevenueCash\RevenueCash.UnitTests\bin\Debug\RevenueCash.UnitTests.pdb
+c:\users\jcumba\documents\visual studio 2015\Projects\RevenueCash\RevenueCash.UnitTests\bin\Debug\RevenueCash.Models.dll
+c:\users\jcumba\documents\visual studio 2015\Projects\RevenueCash\RevenueCash.UnitTests\bin\Debug\RevenueCash.Models.pdb
+c:\users\jcumba\documents\visual studio 2015\Projects\RevenueCash\RevenueCash.UnitTests\obj\Debug\RevenueCash.UnitTests.csprojResolveAssemblyReference.cache
+c:\users\jcumba\documents\visual studio 2015\Projects\RevenueCash\RevenueCash.UnitTests\obj\Debug\RevenueCash.UnitTests.dll
+c:\users\jcumba\documents\visual studio 2015\Projects\RevenueCash\RevenueCash.UnitTests\obj\Debug\RevenueCash.UnitTests.pdb
+C:\Users\G1\Desktop\RevenueCash\RevenueCash.UnitTests\bin\Debug\RevenueCash.UnitTests.dll
+C:\Users\G1\Desktop\RevenueCash\RevenueCash.UnitTests\bin\Debug\RevenueCash.UnitTests.pdb
+C:\Users\G1\Desktop\RevenueCash\RevenueCash.UnitTests\bin\Debug\RevenueCash.Models.dll
+C:\Users\G1\Desktop\RevenueCash\RevenueCash.UnitTests\bin\Debug\RevenueCash.Models.pdb
+C:\Users\G1\Desktop\RevenueCash\RevenueCash.UnitTests\obj\Debug\RevenueCash.UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\G1\Desktop\RevenueCash\RevenueCash.UnitTests\obj\Debug\RevenueCash.UnitTests.dll
+C:\Users\G1\Desktop\RevenueCash\RevenueCash.UnitTests\obj\Debug\RevenueCash.UnitTests.pdb

@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Juego</title>
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/Css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="~/Css/Styles.css" />
+</head>
+<body>
+    <div class="maindiv">
+        <div class="title">
+            Revenue CASH
+        </div>
+        @if (IsSectionDefined("header"))
+        {
+            @RenderSection("header")
+        }
+        @RenderBody()
+    </div>
+</body>
+</html>

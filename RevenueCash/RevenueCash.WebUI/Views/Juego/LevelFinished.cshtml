@@ -1,0 +1,14 @@
+﻿@model RevenueCash.Models.Juego.Game
+@{
+    ViewBag.Title = "LevelFinished";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="levelFinished">NIVEL FINALIZADO</div>
+@if (Model.CurrentLevel.NextLevel != null)
+{
+<div class="nextLevel">
+    @Html.ActionLink("Siguiente nivel", "NextNivel");
+</div>
+}
+

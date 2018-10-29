@@ -17,3 +17,4 @@ C:\Users\harry\source\repos\RevenueCash\RevenueCash.Models\bin\Debug\RevenueCash
 C:\Users\harry\source\repos\RevenueCash\RevenueCash.Models\obj\Debug\RevenueCash.Models.csproj.CoreCompileInputs.cache
 C:\Users\harry\source\repos\RevenueCash\RevenueCash.Models\obj\Debug\RevenueCash.Models.dll
 C:\Users\harry\source\repos\RevenueCash\RevenueCash.Models\obj\Debug\RevenueCash.Models.pdb
+C:\Users\harry\source\repos\RevenueCash\RevenueCash.Models\obj\Debug\RevenueCash.Models.csprojAssemblyReference.cache

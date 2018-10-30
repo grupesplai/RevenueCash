@@ -18,3 +18,8 @@ C:\Users\harry\source\repos\RevenueCash\RevenueCash.Models\obj\Debug\RevenueCash
 C:\Users\harry\source\repos\RevenueCash\RevenueCash.Models\obj\Debug\RevenueCash.Models.dll
 C:\Users\harry\source\repos\RevenueCash\RevenueCash.Models\obj\Debug\RevenueCash.Models.pdb
 C:\Users\harry\source\repos\RevenueCash\RevenueCash.Models\obj\Debug\RevenueCash.Models.csprojAssemblyReference.cache
+C:\Users\G1\Desktop\RevenueCash - copia\RevenueCash.Models\bin\Debug\RevenueCash.Models.dll
+C:\Users\G1\Desktop\RevenueCash - copia\RevenueCash.Models\bin\Debug\RevenueCash.Models.pdb
+C:\Users\G1\Desktop\RevenueCash - copia\RevenueCash.Models\obj\Debug\RevenueCash.Models.csprojResolveAssemblyReference.cache
+C:\Users\G1\Desktop\RevenueCash - copia\RevenueCash.Models\obj\Debug\RevenueCash.Models.dll
+C:\Users\G1\Desktop\RevenueCash - copia\RevenueCash.Models\obj\Debug\RevenueCash.Models.pdb

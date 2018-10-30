@@ -21,3 +21,10 @@ C:\Users\harry\source\repos\RevenueCash\RevenueCash.UnitTests\obj\Debug\RevenueC
 C:\Users\harry\source\repos\RevenueCash\RevenueCash.UnitTests\obj\Debug\RevenueCash.UnitTests.csproj.CopyComplete
 C:\Users\harry\source\repos\RevenueCash\RevenueCash.UnitTests\obj\Debug\RevenueCash.UnitTests.dll
 C:\Users\harry\source\repos\RevenueCash\RevenueCash.UnitTests\obj\Debug\RevenueCash.UnitTests.pdb
+C:\Users\G1\Desktop\RevenueCash - copia\RevenueCash.UnitTests\bin\Debug\RevenueCash.UnitTests.dll
+C:\Users\G1\Desktop\RevenueCash - copia\RevenueCash.UnitTests\bin\Debug\RevenueCash.UnitTests.pdb
+C:\Users\G1\Desktop\RevenueCash - copia\RevenueCash.UnitTests\bin\Debug\RevenueCash.Models.dll
+C:\Users\G1\Desktop\RevenueCash - copia\RevenueCash.UnitTests\bin\Debug\RevenueCash.Models.pdb
+C:\Users\G1\Desktop\RevenueCash - copia\RevenueCash.UnitTests\obj\Debug\RevenueCash.UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\G1\Desktop\RevenueCash - copia\RevenueCash.UnitTests\obj\Debug\RevenueCash.UnitTests.dll
+C:\Users\G1\Desktop\RevenueCash - copia\RevenueCash.UnitTests\obj\Debug\RevenueCash.UnitTests.pdb

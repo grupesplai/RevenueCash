@@ -17,3 +17,10 @@ C:\Users\harry\source\repos\RevenueCash\RevenueCash.ServicesLibrary\obj\Debug\Re
 C:\Users\harry\source\repos\RevenueCash\RevenueCash.ServicesLibrary\obj\Debug\RevenueCash.ServicesLibrary.csproj.CopyComplete
 C:\Users\harry\source\repos\RevenueCash\RevenueCash.ServicesLibrary\obj\Debug\RevenueCash.ServicesLibrary.dll
 C:\Users\harry\source\repos\RevenueCash\RevenueCash.ServicesLibrary\obj\Debug\RevenueCash.ServicesLibrary.pdb
+C:\Users\G1\Desktop\RevenueCash - copia\RevenueCash.ServicesLibrary\bin\Debug\RevenueCash.ServicesLibrary.dll
+C:\Users\G1\Desktop\RevenueCash - copia\RevenueCash.ServicesLibrary\bin\Debug\RevenueCash.ServicesLibrary.pdb
+C:\Users\G1\Desktop\RevenueCash - copia\RevenueCash.ServicesLibrary\bin\Debug\RevenueCash.Models.dll
+C:\Users\G1\Desktop\RevenueCash - copia\RevenueCash.ServicesLibrary\bin\Debug\RevenueCash.Models.pdb
+C:\Users\G1\Desktop\RevenueCash - copia\RevenueCash.ServicesLibrary\obj\Debug\RevenueCash.ServicesLibrary.csprojResolveAssemblyReference.cache
+C:\Users\G1\Desktop\RevenueCash - copia\RevenueCash.ServicesLibrary\obj\Debug\RevenueCash.ServicesLibrary.dll
+C:\Users\G1\Desktop\RevenueCash - copia\RevenueCash.ServicesLibrary\obj\Debug\RevenueCash.ServicesLibrary.pdb

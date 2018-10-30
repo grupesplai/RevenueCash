@@ -32,13 +32,7 @@ namespace RevenueCash.Models.Juego
 
         public Tablero Board { get; set; }
 
-        public bool JuegoFinalizado
-        {
-            get
-            {
-                return (this.Board.FaltanRomper == 0 || !this.Board.QuedanCeldasLibres);
-            }
-        }
+        public bool JuegoFinalizado { get { return (this.Board.FaltanRomper == 0 || !this.Board.QuedanCeldasLibres); } }
 
         public static Game GenerateNewGame(GameDifficulty difficulty)
         {

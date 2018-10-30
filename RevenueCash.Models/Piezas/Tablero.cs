@@ -56,7 +56,7 @@ namespace RevenueCash.Models.Piezas
 
         IList<Celda> celdasYaChequeadas = new List<Celda>();
 
-        public IList<Celda> NuevoMovimiento(int rowIndex, int colIndex, Ficha fichaNueva)
+        public IList<Celda> NuevoMovimiento(int rowIndex, int colIndex, FichaRGB fichaNueva)
         {
             celdasYaChequeadas.Clear();
             IList<Celda> celdasARomper = new List<Celda>();
@@ -82,14 +82,14 @@ namespace RevenueCash.Models.Piezas
             return celdasYaChequeadas.Count(t => t.RowIndex == rowIndex && t.ColIndex == colIndex) > 0;
         }
 
-       private void checkCelda(int rowIndex, int colIndex, Ficha fichaNueva, IList<Celda> celdasARomper)
+       private void checkCelda(int rowIndex, int colIndex, FichaRGB fichaNueva, IList<Celda> celdasARomper)
         {
             if (yaSeChequeoCelda(rowIndex, colIndex)) return;
  
             if (rowIndex < 0 || colIndex < 0 || rowIndex > this.Size - 1 || colIndex > this.Size - 1)
                 return;
  
-            if (this.Celdas[rowIndex, colIndex].Ficha != null && this.Celdas[rowIndex, colIndex].Ficha.Color == fichaNueva.Color)
+            if (this.Celdas[rowIndex, colIndex].Ficha != null && (this.Celdas[rowIndex, colIndex].Ficha as FichaRGB).Color == fichaNueva.Color)
             { 
                 celdasARomper.Add(this.Celdas[rowIndex, colIndex]);
                 this.celdasYaChequeadas.Add(this.Celdas[rowIndex, colIndex]);
@@ -100,10 +100,10 @@ namespace RevenueCash.Models.Piezas
             }
         }
 
-        public static Tablero GenerateBoardFromString(string tableroStr)
+        public static Tablero GenerateBoardFromString(string tableroStr, int levelNumber)
         {
             string[] lineas = tableroStr.Split('\n');
-            Tablero t = Tablero.GenerateBoard(lineas.Length);
+            Tablero tablero = Tablero.GenerateBoard(lineas.Length);
 
             int filaIndex = 0;
             foreach(string linea in lineas)
@@ -112,12 +112,13 @@ namespace RevenueCash.Models.Piezas
                 int colIndex = 0;
                 foreach(char ficharChar in lineaLimpia)
                 {
-                    if (ficharChar == 'X') t.Celdas[filaIndex, colIndex] = new Celda(filaIndex, colIndex);
-                    if (ficharChar == '1') t.Celdas[filaIndex, colIndex] = new Celda(filaIndex, colIndex, new Ficha(ColorFicha.Rojo));
-                    if (ficharChar == '2') t.Celdas[filaIndex, colIndex] = new Celda(filaIndex, colIndex, new Ficha(ColorFicha.Azul));
-                    if (ficharChar == '3') t.Celdas[filaIndex, colIndex] = new Celda(filaIndex, colIndex, new Ficha(ColorFicha.Verde));
-                    if (ficharChar == '4') t.Celdas[filaIndex, colIndex] = new Celda(filaIndex, colIndex, new Ficha(ColorFicha.Amarillo));
-                    if (ficharChar == 'R') t.Celdas[filaIndex, colIndex] = new Celda(filaIndex, colIndex, new Ficha(Ficha.GetRandomColorFicha()));
+                    if (ficharChar == '-') tablero.Celdas[filaIndex, colIndex] = new Celda(filaIndex, colIndex);
+                    if (ficharChar == '1') tablero.Celdas[filaIndex, colIndex] = new Celda(filaIndex, colIndex, new FichaRGB(ColorFicha.Rojo));
+                    if (ficharChar == '2') tablero.Celdas[filaIndex, colIndex] = new Celda(filaIndex, colIndex, new FichaRGB(ColorFicha.Azul));
+                    if (ficharChar == '3') tablero.Celdas[filaIndex, colIndex] = new Celda(filaIndex, colIndex, new FichaRGB(ColorFicha.Verde));
+                    if (ficharChar == '4') tablero.Celdas[filaIndex, colIndex] = new Celda(filaIndex, colIndex, new FichaRGB(ColorFicha.Amarillo));
+                    if (ficharChar == 'R') tablero.Celdas[filaIndex, colIndex] = new Celda(filaIndex, colIndex, new FichaRGB(FichaRGB.GetRandomColorFicha(levelNumber + 2)));
+                    if (ficharChar == 'B') tablero.Celdas[filaIndex, colIndex] = new Celda(filaIndex, colIndex, new FichaBrick());
 
                     colIndex++;
                 }
@@ -125,7 +126,7 @@ namespace RevenueCash.Models.Piezas
                 filaIndex++;
             }
 
-            return t;
+            return tablero;
         }
 
         public override string ToString()
@@ -137,9 +138,9 @@ namespace RevenueCash.Models.Piezas
                 for(var columnaIndex = 0; columnaIndex < this.Size; columnaIndex++)
                 {
                     if (this.Celdas[filaIndex, columnaIndex].Ficha == null)
-                        tableroStr += "X";
+                        tableroStr += "-";
                     else
-                        tableroStr += ((int)this.Celdas[filaIndex, columnaIndex].Ficha.Color).ToString();
+                        tableroStr += ((this.Celdas[filaIndex, columnaIndex].Ficha as FichaRGB).Color).ToString();//modificado
                 }
 
                 tableroStr += "\n";

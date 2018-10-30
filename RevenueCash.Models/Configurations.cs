@@ -1,10 +1,5 @@
 ﻿using RevenueCash.Models.Juego;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace RevenueCash.Models
 {
     public static class Configurations
@@ -15,31 +10,33 @@ namespace RevenueCash.Models
             Levels = new List<Level>();
             Level level1 = new Level()
             {
-                StringLevel = @"XXXXXXXXXX
-                                XXXXXXXXXX
-                                XXXXXXXXXX
-                                XXXXXXXXXX
-                                XXXXXXRXXX
-                                XXXXXXXXXX
-                                XXXXXXXXXX
-                                XXXXXXXXXX
-                                XXRXXXXXXX
-                                XXXXXXXXXX",
+                StringLevel = @"----------
+                                ----------
+                                --R-------
+                                ----------
+                                ------R---
+                                ----------
+                                ----------
+                                ----------
+                                --R-------
+                                ---------R",
                 LevelNumber = 1
             };
             Levels.Add(level1);
+
+
             Level level2 = new Level()
             {
-                StringLevel = @"XXXXXXXXXX
-                                XXXXXXXXXX
-                                XXXXXXXXXX
-                                XXXXXXXXXX
-                                XXXRXXXXXX
-                                XXXXXXXRXX
-                                XXXXXXXXXX
-                                XXXXXXXXXX
-                                XXXXXRXXXX
-                                XXRXXXXXXX",
+                StringLevel = @"----R-----
+                                ----------
+                                ----------
+                                ----------
+                                ---R------
+                                -------R--
+                                -R--------
+                                ----------
+                                -----R----
+                                --R-------",
                 LevelNumber = 2
             };
             level1.NextLevel = level2;
@@ -47,20 +44,37 @@ namespace RevenueCash.Models
 
             Level level3 = new Level()
             {
-                StringLevel = @"XXXXXXXXXX
-                                XXXXXXXXXX
-                                XXXRXXXXXX
-                                XXXXXXXXXX
-                                XXXRXXXXXX
-                                XXXXXXXRXX
-                                XXXRXXXXXX
-                                XXXXXXXXXX
-                                XXXXXRXXXX
-                                XXRXXXXXXX",
+                StringLevel = @"----------
+                                -------R--
+                                ---R------
+                                ----R-----
+                                ---R------
+                                -------R--
+                                ---R------
+                                ----------
+                                -----R----
+                                --R-------",
                 LevelNumber = 3
             };
             level2.NextLevel = level3;
             Levels.Add(level2);
+
+            Level level4 = new Level()
+            {
+                StringLevel = @"---R-----R
+                                ----------
+                                -RR-------
+                                ----------
+                                ------R---
+                                ----------
+                                R--------R
+                                -R--------
+                                --R-------
+                                -----R---R",
+                LevelNumber = 4
+            };
+            level3.NextLevel = level4;
+            Levels.Add(level3);
         }
 
         public static IList<Level> Levels { get; set; }

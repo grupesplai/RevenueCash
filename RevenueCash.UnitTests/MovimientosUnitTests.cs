@@ -18,18 +18,18 @@ namespace RevenueCash.UnitTests
                   X11XXXXXXX
                   XXXXXXXXXX
                   XXXXXXXXXX
-                  XXXXXXXXXX
+                  XXXXBBXXXX
                   XXXXXXXX3X
                   XXXXXXXXXX
                   X2XXXXXXXX
-                  XXXXXXXXX4"
+                  XXXXXXXXX4", 3
             );
 
             Assert.AreEqual(null, tablero.Celdas[9, 0].Ficha);
-            Assert.AreEqual(ColorFicha.Rojo, tablero.Celdas[0, 3].Ficha.Color);
-            Assert.AreEqual(ColorFicha.Amarillo, tablero.Celdas[9, 9].Ficha.Color);
-            Assert.AreEqual(ColorFicha.Verde, tablero.Celdas[6, 8].Ficha.Color);
-            Assert.AreEqual(ColorFicha.Azul, tablero.Celdas[8, 1].Ficha.Color);
+            Assert.AreEqual(ColorFicha.Rojo, tablero.Celdas[0, 3].Ficha);
+            Assert.AreEqual(ColorFicha.Amarillo, tablero.Celdas[9, 9].Ficha);
+            Assert.AreEqual(ColorFicha.Verde, tablero.Celdas[6, 8].Ficha);
+            Assert.AreEqual(ColorFicha.Azul, tablero.Celdas[8, 1].Ficha);
 
             string tableroStr = tablero.ToString();
         }
@@ -43,18 +43,18 @@ namespace RevenueCash.UnitTests
                   X11XXXXXXX
                   XXXXXXXXXX
                   XXXXXXXXXX
-                  XXXRRXXXXX
+                  XXXXXXXXXX
                   XXXXXXXX3X
                   XXXXXXXXXX
                   X2XXXXXXXX
-                  XXXXXXXXX4"
+                  XXXXXXXXX4", 3
             );
 
             Assert.AreEqual(null, tablero.Celdas[9, 0].Ficha);
-            Assert.AreEqual(ColorFicha.Rojo, tablero.Celdas[0, 3].Ficha.Color);
-            Assert.AreEqual(ColorFicha.Amarillo, tablero.Celdas[9, 9].Ficha.Color);
-            Assert.AreEqual(ColorFicha.Verde, tablero.Celdas[6, 8].Ficha.Color);
-            Assert.AreEqual(ColorFicha.Azul, tablero.Celdas[8, 1].Ficha.Color);
+            Assert.AreEqual(ColorFicha.Rojo, tablero.Celdas[0, 3].Ficha);
+            Assert.AreEqual(ColorFicha.Amarillo, tablero.Celdas[9, 9].Ficha);
+            Assert.AreEqual(ColorFicha.Verde, tablero.Celdas[6, 8].Ficha);
+            Assert.AreEqual(ColorFicha.Azul, tablero.Celdas[8, 1].Ficha);
             Assert.AreNotEqual(null, tablero.Celdas[5, 3].Ficha);
             Assert.AreNotEqual(null, tablero.Celdas[5, 4].Ficha);
 
@@ -69,10 +69,10 @@ namespace RevenueCash.UnitTests
                   XX2XX
                   X1X1X
                   XXXXX
-                  XXXXX"
+                  XXXXX", 1
             );
 
-            IList<Celda> aRomper = tablero.NuevoMovimiento(2, 2, new Ficha(ColorFicha.Rojo));
+            IList<Celda> aRomper = tablero.NuevoMovimiento(2, 2, new FichaRGB(ColorFicha.Rojo));
 
             Assert.AreEqual(3, aRomper.Count);
 
@@ -89,10 +89,10 @@ namespace RevenueCash.UnitTests
                   XX1XX
                   XXX2X
                   XX1XX
-                  XXXXX"
+                  XXXXX", 1
             );
 
-            IList<Celda> aRomper = tablero.NuevoMovimiento(2, 2, new Ficha(ColorFicha.Rojo));
+            IList<Celda> aRomper = tablero.NuevoMovimiento(2, 2, new FichaRGB(ColorFicha.Rojo));
 
             Assert.AreEqual(3, aRomper.Count);
 
@@ -109,10 +109,10 @@ namespace RevenueCash.UnitTests
                   1XXXX
                   X2XXX
                   1XXXX
-                  XXXXX"
+                  XXXXX", 1
             );
 
-            IList<Celda> aRomper = tablero.NuevoMovimiento(2, 0, new Ficha(ColorFicha.Rojo));
+            IList<Celda> aRomper = tablero.NuevoMovimiento(2, 0, new FichaRGB(ColorFicha.Rojo));
 
             Assert.AreEqual(3, aRomper.Count);
 
@@ -129,10 +129,10 @@ namespace RevenueCash.UnitTests
                   1XXXX
                   X2XXX
                   11XXX
-                  XXXXX"
+                  XXXXX", 1
             );
 
-            IList<Celda> aRomper = tablero.NuevoMovimiento(2, 0, new Ficha(ColorFicha.Rojo));
+            IList<Celda> aRomper = tablero.NuevoMovimiento(2, 0, new FichaRGB(ColorFicha.Rojo));
 
             Assert.AreEqual(4, aRomper.Count);
 
@@ -140,6 +140,31 @@ namespace RevenueCash.UnitTests
             if (aRomper.Count(t => t.RowIndex == 2 && t.ColIndex == 0) != 1) Assert.Fail("No hay ficha en posición (2,0)");
             if (aRomper.Count(t => t.RowIndex == 3 && t.ColIndex == 0) != 1) Assert.Fail("No hay ficha en posición (3,0)");
             if (aRomper.Count(t => t.RowIndex == 3 && t.ColIndex == 1) != 1) Assert.Fail("No hay ficha en posición (3,1)");
+        }
+
+        [TestMethod]
+        public void TestWhen_GeneratingBoardWithBrick()
+        {
+            Tablero tablero = Tablero.GenerateBoardFromString(
+                @"XXX1XXX12X
+                  XXXXXXX1XX
+                  X11XXXXXXX
+                  XXXXXXXXXX
+                  XXXXXXXXXX
+                  XXXXBBXXXX
+                  XXXXXXXX3X
+                  XXXXXXXXXX
+                  X2XXXXXXXX
+                  XXXXXXXXX4", 3
+            );
+
+            Assert.AreEqual(null, tablero.Celdas[9, 0].Ficha);
+            Assert.AreEqual(ColorFicha.Rojo, tablero.Celdas[0, 3].Ficha);
+            Assert.AreEqual(ColorFicha.Amarillo, tablero.Celdas[9, 9].Ficha);
+            Assert.AreEqual(ColorFicha.Verde, tablero.Celdas[6, 8].Ficha);
+            Assert.AreEqual(ColorFicha.Azul, tablero.Celdas[8, 1].Ficha);
+            Assert.AreEqual(true, tablero.Celdas[5, 4].Ficha is FichaBrick);
+            string tableroStr = tablero.ToString();
         }
     }
 }

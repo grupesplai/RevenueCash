@@ -15,7 +15,7 @@ namespace RevenueCash.Models.Piezas
             this.Ficha = null;
         }
 
-        public Celda(int rowIndex, int colIndex, Ficha ficha) : this(rowIndex, colIndex)
+        public Celda(int rowIndex, int colIndex, AbstractFicha ficha) : this(rowIndex, colIndex)
         {
             this.Ficha = ficha;
         }
@@ -26,7 +26,7 @@ namespace RevenueCash.Models.Piezas
 
         
 
-        public Ficha Ficha { get; set; }
+        public AbstractFicha Ficha { get; set; }
 
     }
 }

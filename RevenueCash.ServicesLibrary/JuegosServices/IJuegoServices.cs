@@ -19,7 +19,7 @@ namespace RevenueCash.ServicesLibrary.JuegosServices
 
         MovimientoFicha NuevoMovimiento(Game game, Posicion posicion, int indice);
 
-        IList<FichaDisparo> GetFichaDisparo(int size, Posicion desdeDonde);
+        IList<FichaDisparo> GetFichaDisparo(Game juegoActual, Posicion desdeDonde);
 
         Game GetNextLevel(Game actualGame);
     }

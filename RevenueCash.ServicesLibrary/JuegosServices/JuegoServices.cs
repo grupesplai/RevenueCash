@@ -16,7 +16,7 @@ namespace RevenueCash.ServicesLibrary.JuegosServices
         {
             Game nuevoJuego = Game.GenerateNewGame(GameDifficulty.Easy);
             nuevoJuego.CurrentLevel = this.GetLevel(1);
-            nuevoJuego.Board = Tablero.GenerateBoardFromString(nuevoJuego.CurrentLevel.StringLevel);
+            nuevoJuego.Board = Tablero.GenerateBoardFromString(nuevoJuego.CurrentLevel.StringLevel, nuevoJuego.CurrentLevel.LevelNumber);
             return nuevoJuego;
         }
 
@@ -97,12 +97,13 @@ namespace RevenueCash.ServicesLibrary.JuegosServices
             }
             throw new Exception("Level not found!");
         }
-        public IList<FichaDisparo> GetFichaDisparo(int size, Posicion desdeDonde)
+        public IList<FichaDisparo> GetFichaDisparo(Game juegoActual, Posicion desdeDonde)
         {
             IList<FichaDisparo> fichasLaterales = new List<FichaDisparo>();
-            for (int indice = 0; indice < size; indice++) 
+
+            for (int indice = 0; indice < juegoActual.Board.Size; indice++) 
             {
-                FichaDisparo ficha = new FichaDisparo(Ficha.GetRandomColorFicha(), desdeDonde,indice);
+                FichaDisparo ficha = new FichaDisparo(FichaRGB.GetRandomColorFicha(juegoActual.CurrentLevel.LevelNumber + 2), desdeDonde,indice);
                 fichasLaterales.Add(ficha);
             }
             return fichasLaterales;
@@ -111,10 +112,11 @@ namespace RevenueCash.ServicesLibrary.JuegosServices
         public MovimientoFicha NuevoMovimiento(Game game, Posicion desdeDonde, int indice)
         {
             MovimientoFicha movimiento = new MovimientoFicha();
+
             Celda dondePonerFicha = this.DisparaFicha(game, desdeDonde, indice);
             if (dondePonerFicha != null)
             {
-                IList<Celda> celdasARomper = game.Board.NuevoMovimiento(dondePonerFicha.RowIndex, dondePonerFicha.ColIndex, new Ficha(game.Board.FichaDisparo[desdeDonde][indice].Color));
+                IList<Celda> celdasARomper = game.Board.NuevoMovimiento(dondePonerFicha.RowIndex, dondePonerFicha.ColIndex, new FichaRGB(game.Board.FichaDisparo[desdeDonde][indice].Color));
                 if (celdasARomper != null)
                 {
                     movimiento.CeldaRotas = celdasARomper;
@@ -126,7 +128,13 @@ namespace RevenueCash.ServicesLibrary.JuegosServices
                         game.Board.Celdas[celda.RowIndex, celda.ColIndex].Ficha = null;
                     }
                 }
-                game.Board.FichaDisparo[desdeDonde][indice].Color = Ficha.GetRandomColorFicha();
+                ColorFicha colorFicha = FichaRGB.GetRandomColorFicha(game.CurrentLevel.LevelNumber + 2);
+
+                while (game.Board.FichaDisparo[desdeDonde][indice].Color == colorFicha)
+                {
+                    colorFicha = FichaRGB.GetRandomColorFicha(game.CurrentLevel.LevelNumber + 2);
+                }
+                game.Board.FichaDisparo[desdeDonde][indice].Color = colorFicha;
             }
             
             movimiento.Juego = game;
@@ -137,8 +145,8 @@ namespace RevenueCash.ServicesLibrary.JuegosServices
         public Game GetNextLevel(Game actualGame)
         {
             actualGame.Score = 0;
-            actualGame.CurrentLevel = this.GetLevel(2);
-            actualGame.Board = Tablero.GenerateBoardFromString(actualGame.CurrentLevel.StringLevel);
+            actualGame.CurrentLevel = this.GetLevel(actualGame.CurrentLevel.LevelNumber + 2);
+            actualGame.Board = Tablero.GenerateBoardFromString(actualGame.CurrentLevel.StringLevel, actualGame.CurrentLevel.LevelNumber);
             return actualGame;
         }
     }

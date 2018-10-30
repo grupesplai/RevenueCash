@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RevenueCash.Models.Piezas
 {
-    public class FichaDisparo : Ficha
+    public class FichaDisparo : FichaRGB
     {
         public FichaDisparo(ColorFicha color, Posicion desdeDonde, int indice) : base(color)
         {

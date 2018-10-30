@@ -38,10 +38,10 @@ namespace RevenueCash.WebUI.Controllers
 
         private Game configFichaDisparo(Game newGame)
         {
-            newGame.Board.FichaDisparo.Add(Posicion.Arriba, _juegoServices.GetFichaDisparo(newGame.Board.Size, Posicion.Arriba));
-            newGame.Board.FichaDisparo.Add(Posicion.Abajo, _juegoServices.GetFichaDisparo(newGame.Board.Size, Posicion.Abajo));
-            newGame.Board.FichaDisparo.Add(Posicion.Derecha, _juegoServices.GetFichaDisparo(newGame.Board.Size, Posicion.Derecha));
-            newGame.Board.FichaDisparo.Add(Posicion.Izquierda, _juegoServices.GetFichaDisparo(newGame.Board.Size, Posicion.Izquierda));
+            newGame.Board.FichaDisparo.Add(Posicion.Arriba, _juegoServices.GetFichaDisparo(newGame, Posicion.Arriba));
+            newGame.Board.FichaDisparo.Add(Posicion.Abajo, _juegoServices.GetFichaDisparo(newGame, Posicion.Abajo));
+            newGame.Board.FichaDisparo.Add(Posicion.Derecha, _juegoServices.GetFichaDisparo(newGame, Posicion.Derecha));
+            newGame.Board.FichaDisparo.Add(Posicion.Izquierda, _juegoServices.GetFichaDisparo(newGame, Posicion.Izquierda));
             return newGame;
         }
 

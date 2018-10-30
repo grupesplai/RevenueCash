@@ -46,12 +46,15 @@
     <Compile Include="Juego\GameDifficulty.cs" />
     <Compile Include="Juego\GameState.cs" />
     <Compile Include="Juego\Level.cs" />
+    <Compile Include="Piezas\AbstractFicha.cs" />
     <Compile Include="Piezas\Celda.cs" />
     <Compile Include="Piezas\ColorFicha.cs" />
-    <Compile Include="Piezas\Ficha.cs" />
+    <Compile Include="Piezas\FichaBrick.cs" />
+    <Compile Include="Piezas\FichaRGB.cs" />
     <Compile Include="Piezas\FichaDisparo.cs" />
     <Compile Include="Piezas\Posicion.cs" />
     <Compile Include="Piezas\Tablero.cs" />
+    <Compile Include="Piezas\TypeFicha.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -7,13 +7,12 @@
     --tr-X: calc(var(--btn-w) - var(--dot-w));
 }
 
-* {
+/** {
     box-sizing: border-box;
 }
-
     *:before, *:after {
         box-sizing: border-box;
-    }
+}*/
 
 body{
     background-image: url("/imagenes/background.jpg");
@@ -31,9 +30,9 @@ body{
     color: red;
     margin: 15px;
 }
-.tablero {
+.tablero{
     display: inline-block;
-    height: 576px;
+    height:576px;
     width: 576px;
     margin: 0 auto;
     padding: 20px;
@@ -53,23 +52,24 @@ body{
     background-image: url("/imagenes/CeldaVacia.png");
 }
 .header{
-    margin:30px;
     display: inline-block;
-
+    margin:30px;
+    width: 40%;
 }
 .header .content {
-    width: 400px;
+    width:576px;
     margin: 0 auto;
 }
 
 .header .content{
     font-size: 24px;
-    color: white;   
+    color: white;
     overflow: hidden;
-    display: inline-block;
     padding: 10px;
+    width: 400px;
     padding-bottom: 500px;
 }
+
 .puntaje {
     width: 240px;
 }
@@ -108,7 +108,6 @@ body{
     color: red;
     margin: 15px;
 }
-
 
 
 .btn {

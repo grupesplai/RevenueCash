@@ -110,6 +110,7 @@ body{
 }
 
 
+
 .btn {
     position: relative;
     margin: 0 auto;
@@ -156,23 +157,9 @@ body{
 }
 
 @keyframes atom {
-    0% {
-        transform: translateX(0) rotate(0);
-    }
-
-    30% {
-        transform: translateX(var(--tr-X)) rotate(0);
-    }
-
-    50% {
-        transform: translateX(var(--tr-X)) rotate(180deg);
-    }
-
-    80% {
-        transform: translateX(0) rotate(180deg);
-    }
-
-    100% {
-        transform: translateX(0) rotate(360deg);
-    }
+    0% { transform: translateX(0) rotate(0);}
+    30% { transform: translateX(var(--tr-X)) rotate(0);}
+    50% { transform: translateX(var(--tr-X)) rotate(180deg);  }
+    80% { transform: translateX(0) rotate(180deg); }
+    100% { transform: translateX(0) rotate(360deg);}
 }

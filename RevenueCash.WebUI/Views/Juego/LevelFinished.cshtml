@@ -7,8 +7,11 @@
 <div class="levelFinished">NIVEL FINALIZADO</div>
 @if (Model.CurrentLevel.NextLevel != null)
 {
-<div class="nextLevel">
-    @Html.ActionLink("Siguiente nivel", "NextLevel");
-</div>
+    <div class="container">
+        <div class="btn">
+            <span class="nextLevel">@Html.ActionLink("Siguiente nivel", "NextLevel")</span>
+            <div class="dot"></div>
+        </div>
+    </div>
 }
 

@@ -4,12 +4,25 @@
 }
     @section header
     {
-        <div class="header">
-            <div class="content">
-                <div class="puntaje">@Model.Score</div>
+<div class="header">
+    <div class="content">
+        <table>
+            <tr>
+                <td class="titlePuntaje"><strong>Score</strong></td>
+                <td class="titlePuntajeVacio"><strong>   </strong></td>
+                <td class="titlePuntaje"><strong>Level</strong></td>
+            </tr>
 
-            </div>
-        </div>
+            <tr>
+                <td class="puntaje tablaPuntaje">@Model.Score</td>
+                <td></td>
+                <td class="puntajeNivel tablaPuntaje">2</td>
+            </tr>
+
+
+        </table>
+    </div>
+</div>
     }
     @Html.Partial("Partial/Tablero", Model.Board);
 

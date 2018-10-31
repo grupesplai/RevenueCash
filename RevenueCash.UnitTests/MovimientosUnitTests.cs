@@ -13,23 +13,23 @@ namespace RevenueCash.UnitTests
         public void TestWhen_GeneratingBoardFromString()
         {
             Tablero tablero = Tablero.GenerateBoardFromString(
-                @"XXX1XXX12X
-                  XXXXXXX1XX
-                  X11XXXXXXX
-                  XXXXXXXXXX
-                  XXXXXXXXXX
-                  XXXXBBXXXX
-                  XXXXXXXX3X
-                  XXXXXXXXXX
-                  X2XXXXXXXX
-                  XXXXXXXXX4", 3
+                @"---1---12-
+                  -------1--
+                  -11-------
+                  ----------
+                  ----------
+                  ----BB----
+                  --------3-
+                  ----------
+                  -2--------
+                  ---------4", 3
             );
 
             Assert.AreEqual(null, tablero.Celdas[9, 0].Ficha);
-            Assert.AreEqual(ColorFicha.Rojo, tablero.Celdas[0, 3].Ficha);
-            Assert.AreEqual(ColorFicha.Amarillo, tablero.Celdas[9, 9].Ficha);
-            Assert.AreEqual(ColorFicha.Verde, tablero.Celdas[6, 8].Ficha);
-            Assert.AreEqual(ColorFicha.Azul, tablero.Celdas[8, 1].Ficha);
+            Assert.AreEqual(ColorFicha.Rojo, (tablero.Celdas[0, 3].Ficha as FichaRGB).Color);
+            Assert.AreEqual(ColorFicha.Amarillo, (tablero.Celdas[9, 9].Ficha as FichaRGB).Color);
+            Assert.AreEqual(ColorFicha.Verde, (tablero.Celdas[6, 8].Ficha as FichaRGB).Color);
+            Assert.AreEqual(ColorFicha.Azul, (tablero.Celdas[8, 1].Ficha as FichaRGB).Color);
 
             string tableroStr = tablero.ToString();
         }
@@ -38,26 +38,23 @@ namespace RevenueCash.UnitTests
         public void TestWhen_GeneratingBoardFromStringWithRandoms()
         {
             Tablero tablero = Tablero.GenerateBoardFromString(
-                @"XXX1XXX12X
-                  XXXXXXX1XX
-                  X11XXXXXXX
-                  XXXXXXXXXX
-                  XXXXXXXXXX
-                  XXXXXXXXXX
-                  XXXXXXXX3X
-                  XXXXXXXXXX
-                  X2XXXXXXXX
-                  XXXXXXXXX4", 3
+                @"---1---12-
+                  -------1--
+                  -11-------
+                  ----------
+                  ----------
+                  ----------
+                  --------3-
+                  ----------
+                  -2--------
+                  ---------4", 3
             );
 
             Assert.AreEqual(null, tablero.Celdas[9, 0].Ficha);
-            Assert.AreEqual(ColorFicha.Rojo, tablero.Celdas[0, 3].Ficha);
-            Assert.AreEqual(ColorFicha.Amarillo, tablero.Celdas[9, 9].Ficha);
-            Assert.AreEqual(ColorFicha.Verde, tablero.Celdas[6, 8].Ficha);
-            Assert.AreEqual(ColorFicha.Azul, tablero.Celdas[8, 1].Ficha);
-            Assert.AreNotEqual(null, tablero.Celdas[5, 3].Ficha);
-            Assert.AreNotEqual(null, tablero.Celdas[5, 4].Ficha);
-
+            Assert.AreEqual(ColorFicha.Rojo, (tablero.Celdas[0, 3].Ficha as FichaRGB).Color);
+            Assert.AreEqual(ColorFicha.Amarillo, (tablero.Celdas[9, 9].Ficha as FichaRGB).Color);
+            Assert.AreEqual(ColorFicha.Verde, (tablero.Celdas[6, 8].Ficha as FichaRGB).Color);
+            Assert.AreEqual(ColorFicha.Azul, (tablero.Celdas[8, 1].Ficha as FichaRGB).Color);
             string tableroStr = tablero.ToString();
         }
 
@@ -65,11 +62,11 @@ namespace RevenueCash.UnitTests
         public void TestWhen_TreeInLine_1()
         {
             Tablero tablero = Tablero.GenerateBoardFromString(
-                @"XXXXX
-                  XX2XX
-                  X1X1X
-                  XXXXX
-                  XXXXX", 1
+                @"-----
+                  --2--
+                  -1-1-
+                  -----
+                  -----", 1
             );
 
             IList<Celda> aRomper = tablero.NuevoMovimiento(2, 2, new FichaRGB(ColorFicha.Rojo));
@@ -85,11 +82,11 @@ namespace RevenueCash.UnitTests
         public void TestWhen_TreeInLine_2()
         {
             Tablero tablero = Tablero.GenerateBoardFromString(
-                @"XXXXX
-                  XX1XX
-                  XXX2X
-                  XX1XX
-                  XXXXX", 1
+                @"-----
+                  --1--
+                  ---2-
+                  --1--
+                  -----", 1
             );
 
             IList<Celda> aRomper = tablero.NuevoMovimiento(2, 2, new FichaRGB(ColorFicha.Rojo));
@@ -105,11 +102,11 @@ namespace RevenueCash.UnitTests
         public void TestWhen_TreeInLine_3()
         {
             Tablero tablero = Tablero.GenerateBoardFromString(
-                @"XXXXX
-                  1XXXX
-                  X2XXX
-                  1XXXX
-                  XXXXX", 1
+                @"-----
+                  1----
+                  -2---
+                  1----
+                  -----", 1
             );
 
             IList<Celda> aRomper = tablero.NuevoMovimiento(2, 0, new FichaRGB(ColorFicha.Rojo));
@@ -125,11 +122,11 @@ namespace RevenueCash.UnitTests
         public void TestWhen_TreeInLine_4()
         {
             Tablero tablero = Tablero.GenerateBoardFromString(
-                @"XXXXX
-                  1XXXX
-                  X2XXX
-                  11XXX
-                  XXXXX", 1
+                @"-----
+                  1----
+                  -2---
+                  11---
+                  -----", 1
             );
 
             IList<Celda> aRomper = tablero.NuevoMovimiento(2, 0, new FichaRGB(ColorFicha.Rojo));
@@ -146,23 +143,23 @@ namespace RevenueCash.UnitTests
         public void TestWhen_GeneratingBoardWithBrick()
         {
             Tablero tablero = Tablero.GenerateBoardFromString(
-                @"XXX1XXX12X
-                  XXXXXXX1XX
-                  X11XXXXXXX
-                  XXXXXXXXXX
-                  XXXXXXXXXX
-                  XXXXBBXXXX
-                  XXXXXXXX3X
-                  XXXXXXXXXX
-                  X2XXXXXXXX
-                  XXXXXXXXX4", 3
+                @"---1---12-
+                  -------1--
+                  -11-------
+                  ----------
+                  ----------
+                  ----BB----
+                  --------3-
+                  ----------
+                  -2--------
+                  ---------4", 3
             );
 
             Assert.AreEqual(null, tablero.Celdas[9, 0].Ficha);
-            Assert.AreEqual(ColorFicha.Rojo, tablero.Celdas[0, 3].Ficha);
-            Assert.AreEqual(ColorFicha.Amarillo, tablero.Celdas[9, 9].Ficha);
-            Assert.AreEqual(ColorFicha.Verde, tablero.Celdas[6, 8].Ficha);
-            Assert.AreEqual(ColorFicha.Azul, tablero.Celdas[8, 1].Ficha);
+            Assert.AreEqual(ColorFicha.Rojo, (tablero.Celdas[0, 3].Ficha as FichaRGB).Color);
+            Assert.AreEqual(ColorFicha.Amarillo, (tablero.Celdas[9, 9].Ficha as FichaRGB).Color);
+            Assert.AreEqual(ColorFicha.Verde, (tablero.Celdas[6, 8].Ficha as FichaRGB).Color);
+            Assert.AreEqual(ColorFicha.Azul, (tablero.Celdas[8, 1].Ficha as FichaRGB).Color);
             Assert.AreEqual(true, tablero.Celdas[5, 4].Ficha is FichaBrick);
             string tableroStr = tablero.ToString();
         }

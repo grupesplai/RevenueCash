@@ -65,6 +65,7 @@ namespace RevenueCash.Models.Piezas
             celdasARomper.Add(this.Celdas[rowIndex, colIndex]);
             celdasYaChequeadas.Add(this.Celdas[rowIndex, colIndex]);
 
+
             checkCelda(rowIndex, colIndex - 1, fichaNueva, celdasARomper);
             checkCelda(rowIndex, colIndex + 1, fichaNueva, celdasARomper);
             checkCelda(rowIndex - 1, colIndex, fichaNueva, celdasARomper);
@@ -88,7 +89,12 @@ namespace RevenueCash.Models.Piezas
  
             if (rowIndex < 0 || colIndex < 0 || rowIndex > this.Size - 1 || colIndex > this.Size - 1)
                 return;
- 
+
+            if (this.Celdas[rowIndex, colIndex].Ficha is FichaBrick)
+            {
+                this.celdasYaChequeadas.Add(this.Celdas[rowIndex, colIndex]);
+                return;
+            }
             if (this.Celdas[rowIndex, colIndex].Ficha != null && (this.Celdas[rowIndex, colIndex].Ficha as FichaRGB).Color == fichaNueva.Color)
             { 
                 celdasARomper.Add(this.Celdas[rowIndex, colIndex]);
@@ -140,7 +146,9 @@ namespace RevenueCash.Models.Piezas
                     if (this.Celdas[filaIndex, columnaIndex].Ficha == null)
                         tableroStr += "-";
                     else
+                        if (this.Celdas[filaIndex, columnaIndex].Ficha is FichaRGB)
                         tableroStr += ((this.Celdas[filaIndex, columnaIndex].Ficha as FichaRGB).Color).ToString();//modificado
+                    else tableroStr = "B";
                 }
 
                 tableroStr += "\n";

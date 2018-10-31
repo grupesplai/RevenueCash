@@ -124,6 +124,7 @@
     <Content Include="imagenes\CeldaVacia.png" />
     <Content Include="imagenes\FichaAmarilla_4.png" />
     <Content Include="imagenes\FichaAzul_2.png" />
+    <Content Include="imagenes\FichaBrick.png" />
     <Content Include="imagenes\FichaRojo_1.png" />
     <Content Include="imagenes\FichaVerde_3.png" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />

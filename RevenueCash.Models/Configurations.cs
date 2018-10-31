@@ -12,7 +12,7 @@ namespace RevenueCash.Models
             {
                 StringLevel = @"----------
                                 ----------
-                                --R-------
+                                --R----B--
                                 ----------
                                 ------R---
                                 ----------
@@ -30,9 +30,9 @@ namespace RevenueCash.Models
                 StringLevel = @"----R-----
                                 ----------
                                 ----------
-                                ----------
+                                --B-------
                                 ---R------
-                                -------R--
+                                ------B-R--
                                 -R--------
                                 ----------
                                 -----R----
@@ -46,13 +46,13 @@ namespace RevenueCash.Models
             {
                 StringLevel = @"----------
                                 -------R--
-                                ---R------
+                                ---RB-----
                                 ----R-----
                                 ---R------
-                                -------R--
+                                -----B--R--
                                 ---R------
                                 ----------
-                                -----R----
+                                -----R-B--
                                 --R-------",
                 LevelNumber = 3
             };
@@ -63,14 +63,14 @@ namespace RevenueCash.Models
             {
                 StringLevel = @"---R-----R
                                 ----------
-                                -RR-------
+                                -RR-B-----
                                 ----------
                                 ------R---
-                                ----------
+                                ---B------
                                 R--------R
                                 -R--------
-                                --R-------
-                                -----R---R",
+                                --RB------
+                                B----R---R",
                 LevelNumber = 4
             };
             level3.NextLevel = level4;

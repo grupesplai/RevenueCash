@@ -3,21 +3,30 @@
 <div class="celda">
     @if (Model.Ficha != null)
     {
-        if (Model.Ficha.Color == RevenueCash.Models.Piezas.ColorFicha.Rojo)
+        if (Model.Ficha is RevenueCash.Models.Piezas.FichaRGB)
         {
+            var ficha = Model.Ficha as RevenueCash.Models.Piezas.FichaRGB;
+            if (ficha.Color == RevenueCash.Models.Piezas.ColorFicha.Rojo)
+            {
             <img src="~/imagenes/FichaRojo_1.png" />
-        }
-        if (Model.Ficha.Color == RevenueCash.Models.Piezas.ColorFicha.Amarillo)
-        {
+            }
+            if (ficha.Color == RevenueCash.Models.Piezas.ColorFicha.Amarillo)
+            {
             <img src="~/imagenes/FichaAmarilla_4.png" />
-        }
-        if (Model.Ficha.Color == RevenueCash.Models.Piezas.ColorFicha.Verde)
-        {
+            }
+            if (ficha.Color == RevenueCash.Models.Piezas.ColorFicha.Verde)
+            {
             <img src="~/imagenes/FichaVerde_3.png" />
-        }
-        if (Model.Ficha.Color == RevenueCash.Models.Piezas.ColorFicha.Azul)
-        {
+            }
+            if (ficha.Color == RevenueCash.Models.Piezas.ColorFicha.Azul)
+            {
             <img src="~/imagenes/FichaAzul_2.png" />
+            }
+        }
+
+        if (Model.Ficha is RevenueCash.Models.Piezas.FichaBrick)
+        {
+            <img src="~/imagenes/FichaBrick.png" />
         }
     }
 </div>

@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -61,6 +62,10 @@
     <ProjectReference Include="..\RevenueCash.Models\RevenueCash.Models.csproj">
       <Project>{8a8cf37e-4b41-4dba-959d-9c38017bd226}</Project>
       <Name>RevenueCash.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RevenueCash.ServicesLibrary\RevenueCash.ServicesLibrary.csproj">
+      <Project>{1AB9449F-2AB1-492A-8595-24356A1B75D1}</Project>
+      <Name>RevenueCash.ServicesLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

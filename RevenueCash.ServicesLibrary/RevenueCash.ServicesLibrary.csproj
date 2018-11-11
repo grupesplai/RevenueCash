@@ -41,10 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AttributeHelper.cs" />
+    <Compile Include="DataNamesAttribute.cs" />
+    <Compile Include="DataNamesMapper.cs" />
+    <Compile Include="GeneradorDataSet.cs" />
+    <Compile Include="Inventary.cs" />
     <Compile Include="JuegosServices\IJuegoServices.cs" />
     <Compile Include="JuegosServices\JuegoServices.cs" />
     <Compile Include="Models\MovimientoFicha.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertyMapHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RevenueCash.Models\RevenueCash.Models.csproj">

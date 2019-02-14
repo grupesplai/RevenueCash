@@ -1,36 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RevenueCash.ServicesLibrary
 {
     [AttributeUsage(AttributeTargets.Property)]
-    public class DataNamesAttribute : Attribute
+    public class DtaNamesAttribute : Attribute
     {
-        protected List<string> _valueNames { get; set; }
+        protected List<string> _attributeList { get; set; }
 
         public List<string> ValueNames
         {
             get
             {
-                return _valueNames;
+                return _attributeList;
             }
             set
             {
-                _valueNames = value;
+                _attributeList = value;
             }
         }
 
-        public DataNamesAttribute()
+        public DtaNamesAttribute()
         {
-            _valueNames = new List<string>();
+            _attributeList = new List<string>();
         }
 
-        public DataNamesAttribute(params string[] valueNames)
+        public DtaNamesAttribute(string value)
         {
-            _valueNames = valueNames.ToList();
+            _attributeList.Add(value);
         }
     }
 }

@@ -26,20 +26,6 @@ namespace RevenueCash.UnitTests
             DataNamesMapper<Inventary> mapper = new DataNamesMapper<Inventary>();
             List<Inventary> persons = mapper.Map(priestsDataSet.Tables[0]).ToList();
 
-            //persons.AddRange(mapper.Map(ranchersDataSet.Tables[0]));
-
-            IList<Inventary> lista = new List<Inventary>();
-            foreach (var person in persons)
-            {
-                lista.Add(new Inventary() {
-                    DateOfBirth = person.DateOfBirth,
-                    FirstName = person.FirstName,
-                     IsAmerican = person.IsAmerican,
-                     JobTitle = person.JobTitle,
-                     LastName = person.LastName,
-                     TakenName = person.TakenName
-                });
-            }
             
         }
     }

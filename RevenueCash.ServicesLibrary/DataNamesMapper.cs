@@ -15,13 +15,11 @@ namespace RevenueCash.ServicesLibrary
 
         public IEnumerable<TEntity> Map(DataTable table)
         {
-            //Step 2 - Get the Property Data Names
             var properties = (typeof(TEntity)).GetProperties()
-                                                .Where(x => x.GetCustomAttributes(typeof(DataNamesAttribute), true).Any())
+                                                .Where(x => x.GetCustomAttributes(typeof(DtaNamesAttribute), true).Any())
                                                 .ToList();
-
-            //Step 3 - Map the data
-            List<TEntity> entities = new List<TEntity>();
+            
+            IList<TEntity> entities = new List<TEntity>();
             foreach (DataRow row in table.Rows)
             {
                 TEntity entity = new TEntity();
@@ -33,6 +31,6 @@ namespace RevenueCash.ServicesLibrary
             }
 
             return entities;
-        }
+        }   
     }
 }

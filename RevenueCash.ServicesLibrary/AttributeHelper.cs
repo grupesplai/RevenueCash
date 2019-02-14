@@ -13,7 +13,7 @@ namespace RevenueCash.ServicesLibrary
             var property = type.GetProperty(propertyName).GetCustomAttributes(false).Where(x => x.GetType().Name == "DataNamesAttribute").FirstOrDefault();
             if (property != null)
             {
-                return ((DataNamesAttribute)property).ValueNames;
+                return ((DtaNamesAttribute)property).ValueNames;
             }
             return new List<string>();
         }

@@ -8,22 +8,22 @@ namespace RevenueCash.ServicesLibrary
 {
     public class Inventary
     {
-        [DataNames("first_name")]
+        [DtaNames("first_name")]
     public string FirstName { get; set; }
 
-    [DataNames("last_name")]
+    [DtaNames("last_name")]
     public string LastName { get; set; }
 
-    [DataNames("dob", "dateOfBirth")]
+    [DtaNames("dob")]
     public DateTime DateOfBirth { get; set; }
 
-    [DataNames("job_title", "jobTitle")]
+    [DtaNames("job_title")]
     public string JobTitle { get; set; }
 
-    [DataNames("taken_name", "nickName")]
+    [DtaNames("taken_name")]
     public int TakenName { get; set; }
 
-    [DataNames("is_american", "isAmerican")]
+    [DtaNames("is_american")]
     public bool IsAmerican { get; set; }
     }
 }
